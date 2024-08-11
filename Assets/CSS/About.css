@@ -1,151 +1,12 @@
-/* CSS For Index Page */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body {
-    font-family: Arial, sans-serif;
-    background-image: url('turnip_wallpaper.jpg');
-    color: #333;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden; 
-}
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 5px 20px; 
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.logo-container {
-    flex: 0 0 auto;
-}
-
-header h1 {
-    margin-right: 20px;
-}
-header h1 a {
-    color: #fff;
-    text-decoration: none;
-    margin-right: 15px;
-    margin-left: 5px; 
-}
-header img {
-    height: 40px; 
-    vertical-align: middle;
-}
-nav.right-nav {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end; /* Aligns the nav content to the right */
-    background-color: transparent;
-}
-
-/* Base styles for the navbar */
-nav {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 100%; /* Full width */
-    padding: 15px;
-    background-color: #e7f9c6; /* Match the header background */
-    z-index: 1000;
-}
-
-nav ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: flex-end; /* Align items to the right */
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    margin: 0 5px; /* Space between items */
-}
-
-nav ul li a {
-    color: #000;
-    text-decoration: none;
-    font-size: 14px;
-    padding: 10px 20px; /* Adjust padding for larger clickable area */
-    background-color: #f1f9e0;
-    border-radius: 20px;
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-}
-
-nav ul li a:hover {
-    background-color: #607942;
-    color: #fff;
-    transform: scale(1.1);
-}
-
-/* Mobile styles */
-@media (max-width: 768px) { /* Adjust the breakpoint as needed */
-    nav {
-        padding: 10px;
-    }
-
-    nav ul {
-        flex-direction: row; /* Stack items vertically */
-        align-items: center; /* Center items horizontally */
-        background-color: #e7f9c6; /* Match the header background */
-        position: absolute;
-        top: 50px; /* Adjust if needed */
-        right: 0;
-        width: 100%;
-        z-index: 1000;
-    }
-
-    nav ul li {
-        margin: 10px 0; /* Space between items */
-    }
-
-    nav ul li a {
-        font-size: 12px; /* Adjust font size */
-        padding: 10px 20px; /* Adjust padding */
-        background-color: #f1f9e0; /* Ensure background color is appropriate */
-    }
-
-    .logo-container {
-        display: flex;
-        justify-content: left;
-        width: 100%;
-        padding: 10px;
-    }
-
-    .logo-container h1 {
-        margin: 0; /* Remove default margin */
-    }
-
-    .logo-container h1 a img {
-        display: block;
-        margin: 0 auto; /* Center the logo */
-    }
-}
-
-/* Specific link styling */
-a[href="Commissions.html"] {
-    color: #708944; /* Ensure this specific link is green */
-}
-
 h1 {
     color: #8ea85d; /* Change 'blue' to any color you prefer */
-  }
+}
 
 .intro-container {
     width: 80%; /* Adjust width as needed */
     max-width: 800px; /* Optionally set a max-width for larger screens */
     margin: 100px auto auto; /* Center horizontally with auto margins, and adjust top margin to avoid overlap */
-    padding: 20px;
+    padding: 16px;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -245,10 +106,6 @@ h1 {
     margin-top: 5px;
 }
 
-.intro-container pre {
-    font-size: 12px;
-}
-
 .icon-wrapper {
     display: flex; /* Use flexbox for layout */
     justify-content: center; /* Center icons horizontally */
@@ -296,8 +153,12 @@ h1 {
     max-width: 550px;
     color: #607942;
     margin-right: 70px;
+    text-align: left;
 }
 
+.art-text ul {
+    list-style-type: disc;
+}
 
 /* Initial state of the container */
 .page-container {
@@ -351,8 +212,12 @@ h1 {
 
 /* Animation keyframes */
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 /* Loading image */
@@ -362,12 +227,18 @@ h1 {
 }
 
 #drift-image {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
     cursor: pointer;
     transition: bottom 0.3s ease;
     width: 10%;
 }
 
+@media (max-width: 1024px) {
+    .intro-container {
+        background-color: rgba(white, 0.2);
+        box-shadow: none;
+
+        width: 100%;
+        margin: 64px 0;
+        padding: 0;
+    }
+}
