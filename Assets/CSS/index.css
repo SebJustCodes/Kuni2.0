@@ -1,47 +1,49 @@
-/* CSS For Index Page */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+    --primary: #708944; /* Primary color for the site */
+    --secondary: #f3d78b; /* Secondary color for the site */
+    --background: #c1f7a6; /* Background color for the site */
+    --text: #333; /* Text color for the site */
 }
+
+/* CSS For Index Page */
 body {
     font-family: Arial, sans-serif;
-    background-image: url('turnip_wallpaper.jpg');
-    color: #333;
+    background-image: url('turnip_wallpaper.png');
+    color: var(--text);
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    overflow-x: hidden; 
+    overflow-x: hidden;
 }
+
 header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 5px 20px; 
-    z-index: 1000;
+    padding: 5px 20px;
+    z-index: 10;
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-.logo-container {
-    flex: 0 0 auto;
 }
 
 header h1 {
     margin-right: 20px;
 }
+
 header h1 a {
     color: #fff;
     text-decoration: none;
     margin-right: 15px;
-    margin-left: 5px; 
+    margin-left: 5px;
 }
+
 header img {
-    height: 40px; 
+    height: 40px;
     vertical-align: middle;
 }
+
 nav.right-nav {
     flex: 1;
     display: flex;
@@ -56,7 +58,7 @@ nav {
     right: 0;
     width: 100%; /* Full width */
     padding: 15px;
-    background-color: #DAF7A6; /* Match the header background */
+    background-color: var(--background); /* Match the header background */
     z-index: 1000;
 }
 
@@ -77,9 +79,9 @@ nav ul li a {
     text-decoration: none;
     font-size: 14px;
     padding: 10px 20px; /* Adjust padding for larger clickable area */
-    background-color: #f1f9e0;
+    background-color: var(--secondary);
     border-radius: 20px;
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    transition: background-color, color, transform 0.3s ease;
 }
 
 nav ul li a:hover {
@@ -88,53 +90,9 @@ nav ul li a:hover {
     transform: scale(1.1);
 }
 
-/* Mobile styles */
-@media (max-width: 768px) { /* Adjust the breakpoint as needed */
-    nav {
-        padding: 10px;
-    }
-
-    nav ul {
-        flex-direction: row; /* Stack items vertically */
-        align-items: center; /* Center items horizontally */
-        background-color: #e7f9c6; /* Match the header background */
-        position: absolute;
-        top: 50px; /* Adjust if needed */
-        right: 0;
-        width: 100%;
-        z-index: 1000;
-    }
-
-    nav ul li {
-        margin: 10px 0; /* Space between items */
-    }
-
-    nav ul li a {
-        font-size: 12px; /* Adjust font size */
-        padding: 10px 20px; /* Adjust padding */
-        background-color: #f1f9e0; /* Ensure background color is appropriate */
-    }
-
-    .logo-container {
-        display: flex;
-        justify-content: left;
-        width: 100%;
-        padding: 10px;
-    }
-
-    .logo-container h1 {
-        margin: 0; /* Remove default margin */
-    }
-
-    .logo-container h1 a img {
-        display: block;
-        margin: 0 auto; /* Center the logo */
-    }
-}
-
 /* Specific link styling */
-a[href="Commissions.html"] {
-    color: #708944; /* Ensure this specific link is green */
+a[href='Commissions.html'] {
+    color: var(--primary); /* Ensure this specific link is green */
 }
 
 .intro-container {
@@ -238,28 +196,22 @@ a[href="Commissions.html"] {
     transform: scale(1.1); /* Slightly scale up on hover */
 }
 
-
 /* General styles for page transitions */
 .page-container {
     transition: opacity 0.5s ease;
 }
 
-/* State when transitioning out */
-.page-container.fade-out .intro-text {
-    opacity: 0;
-    height: 0;
-    transition: opacity 0.5s ease, height 0.5s ease;
+.fade-in {
+    animation: fadeIn 0.5s ease forwards;
 }
 
-/* Initial state for the new page */
-.page-container.fade-in .intro-text {
-    opacity: 0;
-}
-
-/* Final state for the new page */
-.page-container.fade-in.loaded .intro-text {
-    opacity: 1;
-    transition: opacity 0.5s ease 0.5s;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 /* Full-screen loading screen */
@@ -278,7 +230,7 @@ a[href="Commissions.html"] {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    z-index: 9999;
+    z-index: 10;
 }
 
 /* Loader animation */
@@ -294,8 +246,12 @@ a[href="Commissions.html"] {
 
 /* Animation keyframes */
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 /* Loading image */
@@ -304,6 +260,13 @@ a[href="Commissions.html"] {
     height: auto;
 }
 
+@media (max-width: 1024px) {
+    .intro-container {
+        background-color: rgba(white, 0.2);
+        box-shadow: none;
 
-
-
+        width: 100%;
+        margin: 64px 0;
+        padding: 0;
+    }
+}
