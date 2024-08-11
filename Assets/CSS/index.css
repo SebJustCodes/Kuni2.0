@@ -201,22 +201,17 @@ a[href='Commissions.html'] {
     transition: opacity 0.5s ease;
 }
 
-/* State when transitioning out */
-.page-container.fade-out .intro-text {
-    opacity: 0;
-    height: 0;
-    transition: opacity 0.5s ease, height 0.5s ease;
+.fade-in {
+    animation: fadeIn 0.5s ease forwards;
 }
 
-/* Initial state for the new page */
-.page-container.fade-in .intro-text {
-    opacity: 0;
-}
-
-/* Final state for the new page */
-.page-container.fade-in.loaded .intro-text {
-    opacity: 1;
-    transition: opacity 0.5s ease 0.5s;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 /* Full-screen loading screen */
@@ -263,4 +258,15 @@ a[href='Commissions.html'] {
 .loading-image {
     width: 100px; /* Adjust size as needed */
     height: auto;
+}
+
+@media (max-width: 1024px) {
+    .intro-container {
+        background-color: rgba(white, 0.2);
+        box-shadow: none;
+
+        width: 100%;
+        margin: 64px 0;
+        padding: 0;
+    }
 }

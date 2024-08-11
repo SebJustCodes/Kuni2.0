@@ -133,21 +133,6 @@ h1 {
     transition: opacity 0.5s ease, height 0.5s ease;
 }
 
-.intro-text.fade-out {
-    opacity: 0;
-    height: 0;
-}
-
-/* Initial state for the new text */
-.intro-text.fade-in {
-    opacity: 0;
-}
-
-/* Final state for the new text */
-.intro-text.loaded {
-    opacity: 1;
-}
-
 .art-text {
     margin-left: 100px;
     max-width: 550px;
@@ -171,13 +156,6 @@ h1 {
 .page-container.transitioning {
     opacity: 0;
     height: 0;
-}
-
-/* State for the new page */
-.page-container.new-page {
-    opacity: 0;
-    height: auto;
-    transition: opacity 0.5s ease 0.5s, height 0.5s ease; /* Delay fade-in */
 }
 
 /* Full-screen loading screen */
@@ -230,15 +208,4 @@ h1 {
     cursor: pointer;
     transition: bottom 0.3s ease;
     width: 10%;
-}
-
-@media (max-width: 1024px) {
-    .intro-container {
-        background-color: rgba(white, 0.2);
-        box-shadow: none;
-
-        width: 100%;
-        margin: 64px 0;
-        padding: 0;
-    }
 }
